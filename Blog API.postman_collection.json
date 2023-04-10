@@ -1,0 +1,211 @@
+{
+	"info": {
+		"_postman_id": "819f263b-4536-430f-85d2-fdf02f98fc2c",
+		"name": "Blog API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "2758577"
+	},
+	"item": [
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "Add comment to Post by Id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"\",\r\n    \"email\":\"rohan@gmail.com\",\r\n    \"body\":\"So good !\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/posts/2/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comments for a Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/posts/2/comments"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Comment by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/posts/2/comments/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Comment by Id",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Salo\",\r\n    \"email\": \"saloo912@gmail.com\",\r\n    \"body\": \"I love this post\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/posts/2/comments/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Comment by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/posts/2/comments/2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update a Post",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "admin",
+						"username": "admin"
+					}
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"My fancy post 13 updated\",\r\n    \"description\":\" fancy post description 13\",\r\n    \"content\":\"fancy post good 13\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/posts/13"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Post by Pagination & Sorting",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/posts?pageNo=0&pageSize=5&sortBy=title&sortDir=desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"posts"
+					],
+					"query": [
+						{
+							"key": "pageNo",
+							"value": "0"
+						},
+						{
+							"key": "pageSize",
+							"value": "5"
+						},
+						{
+							"key": "sortBy",
+							"value": "title"
+						},
+						{
+							"key": "sortDir",
+							"value": "desc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Post by Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/posts/\"15\""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Post by Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8080/api/posts/5"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Posts",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": {
+						"password": "saloni",
+						"username": "saloni"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/posts"
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"usernameOrEmail\":\"saloni@gmail.com\",\r\n    \"password\":\"saloni\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/auth/signin"
+			},
+			"response": []
+		},
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"tony\",\r\n    \"username\":\"tony12\",\r\n    \"email\":\"tony@gmail.com\",\r\n    \"password\":\"tony\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/api/auth/signup"
+			},
+			"response": []
+		}
+	]
+}
