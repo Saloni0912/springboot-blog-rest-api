@@ -75,101 +75,220 @@
 			]
 		},
 		{
-			"name": "Update a Post",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"password": "admin",
-						"username": "admin"
-					}
+			"name": "Category",
+			"item": [
+				{
+					"name": "Add a category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYWxvbmlAZ21haWwuY29tIiwiaWF0IjoxNjgyMTY4NTM0LCJleHAiOjE2ODI3NzMzMzR9._gELshoMEhQSrhKi4t75js833sHJaZcVZxQmRqzk49rpiShFZ92EUivNrBRgfS8A"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"JAVA\",\r\n    \"description\":\"Java category\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/categories"
+					},
+					"response": []
 				},
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\":\"My fancy post 13 updated\",\r\n    \"description\":\" fancy post description 13\",\r\n    \"content\":\"fancy post good 13\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
+				{
+					"name": "Get Category by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/categories/1"
+					},
+					"response": []
 				},
-				"url": "http://localhost:8080/api/posts/13"
-			},
-			"response": []
-		},
-		{
-			"name": "Get Post by Pagination & Sorting",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8080/api/posts?pageNo=0&pageSize=5&sortBy=title&sortDir=desc",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"api",
-						"posts"
-					],
-					"query": [
-						{
-							"key": "pageNo",
-							"value": "0"
+				{
+					"name": "Get all categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/categories"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Category by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2ODIxNzIyODQsImV4cCI6MTY4Mjc3NzA4NH0.rHz4Do8T2xBmOHUQBVCsHKP1zxqhofB96bmKdiEgpm4hnWaAwgohj1VD9HOQKEfM"
+							}
 						},
-						{
-							"key": "pageSize",
-							"value": "5"
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Python\",\r\n    \"description\": \"Python category\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
 						},
-						{
-							"key": "sortBy",
-							"value": "title"
+						"url": "http://localhost:8080/api/categories/1"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2ODIxNzI5MjcsImV4cCI6MTY4Mjc3NzcyN30.hnytVLT_2wF93rGeUYwSOZWm7FeD9vV77ZXjRDQbZXll6UUQ8qIQp6NNIuNtgLBA"
+							}
 						},
-						{
-							"key": "sortDir",
-							"value": "desc"
-						}
-					]
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/categories/1"
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Get a Post by Id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "http://localhost:8080/api/posts/\"15\""
-			},
-			"response": []
-		},
-		{
-			"name": "Delete a Post by Id",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": "http://localhost:8080/api/posts/5"
-			},
-			"response": []
-		},
-		{
-			"name": "Get Posts",
-			"request": {
-				"auth": {
-					"type": "basic",
-					"basic": {
-						"password": "saloni",
-						"username": "saloni"
-					}
+			"name": "Post",
+			"item": [
+				{
+					"name": "Update a Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2ODIxNzM4NzEsImV4cCI6MTY4Mjc3ODY3MX0.2zUOkYXv72EVvEcswC5ZjDF9EpbPBbI3NmJir_e1GdbtHVMfN4uAWnnBfUhKjtmN"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"My fancy post 17 updated\",\r\n    \"description\":\" fancy post description 17 updated\",\r\n    \"content\":\"fancy post good 17 updated\",\r\n    \"categoryId\":3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/posts/17"
+					},
+					"response": []
 				},
-				"method": "GET",
-				"header": [],
-				"url": "http://localhost:8080/api/posts"
-			},
-			"response": []
+				{
+					"name": "Add a Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2ODIxNzM0NTgsImV4cCI6MTY4Mjc3ODI1OH0.I2D4MqFHZe9O2KvVOhr-RdCNELY3SJA8_4FreWpyV_jZIqCWDh5lAufSfajtGk_w"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"My fancy post 17\",\r\n    \"description\":\" fancy post description 17\",\r\n    \"content\":\"fancy post good 17\",\r\n    \"categoryId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/api/posts"
+					},
+					"response": []
+				},
+				{
+					"name": "Get Posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJzYWxvbmlAZ21haWwuY29tIiwiaWF0IjoxNjgxODYyOTY1LCJleHAiOjE2ODI0Njc3NjV9.nVjGcK3UHuxgjmqLTqa7ryy6Pv5VhtuUiwZGKwQ9f6bJB-cNsvpWTXOL9RrWTbMO"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/posts"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Post by Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBnbWFpbC5jb20iLCJpYXQiOjE2ODE4NjI3ODYsImV4cCI6MTY4MjQ2NzU4Nn0.3gWHGy6fgKJKotl96FcgHOPKQ2vNXGWKiKQYmmHyT1IMcQWkcSXYKXj2mJ4ZyKj1"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/api/posts/5"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a Post by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/posts/\"15\""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Post by Pagination & Sorting",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/posts?pageNo=0&pageSize=5&sortBy=title&sortDir=desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "pageNo",
+									"value": "0"
+								},
+								{
+									"key": "pageSize",
+									"value": "5"
+								},
+								{
+									"key": "sortBy",
+									"value": "title"
+								},
+								{
+									"key": "sortDir",
+									"value": "desc"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Login",
