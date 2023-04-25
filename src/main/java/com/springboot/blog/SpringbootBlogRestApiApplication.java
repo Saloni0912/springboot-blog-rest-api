@@ -1,7 +1,9 @@
 package com.springboot.blog;
 
 import com.springboot.blog.entity.Role;
+import com.springboot.blog.entity.User;
 import com.springboot.blog.repository.RoleRepository;
+import com.springboot.blog.repository.UserRepository;
 import io.swagger.v3.oas.annotations.ExternalDocumentation;
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Contact;
@@ -13,6 +15,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @SpringBootApplication
 @OpenAPIDefinition(
@@ -30,7 +35,7 @@ import org.springframework.context.annotation.Bean;
 				url = "https://github.com/Saloni0912/springboot-blog-rest-api"
 		)
 )
-public class SpringbootBlogRestApiApplication implements CommandLineRunner {
+public class SpringbootBlogRestApiApplication  {
 
 	@Bean
 	public ModelMapper modelMapper(){
@@ -41,18 +46,4 @@ public class SpringbootBlogRestApiApplication implements CommandLineRunner {
 		SpringApplication.run(SpringbootBlogRestApiApplication.class, args);
 	}
 
-	@Autowired
-	private RoleRepository roleRepository;
-
-	@Override
-	public void run(String... args) throws Exception {
-		Role adminRole = new Role();
-		adminRole.setName("ROLE_ADMIN");
-		roleRepository.save(adminRole);
-
-		Role userRole = new Role();
-		userRole.setName("ROLE_USER");
-		roleRepository.save(userRole);
-
-	}
 }

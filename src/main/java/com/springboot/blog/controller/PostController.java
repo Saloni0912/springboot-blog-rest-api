@@ -127,4 +127,17 @@ public class PostController {
         List<PostDto> posts = postService.getPostsByCategory(categoryId);
         return ResponseEntity.ok(posts);
     }
+
+    @Operation(
+            summary = "Get Posts By Search REST API",
+            description = "Get Posts By Search REST API is used to fetch all posts linked to a specific search query from database"
+    )
+    @ApiResponse(
+            responseCode = "200",
+            description = "Http Status 200 SUCCESS"
+    )
+    @GetMapping("/search")
+    public ResponseEntity<List<PostDto>> searchPosts(@RequestParam("query") String query){
+        return ResponseEntity.ok(postService.searchPosts(query));
+    }
 }
