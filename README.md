@@ -56,7 +56,7 @@ The REST API documentation is available at [Swagger UI](http://localhost:8080/sw
 6. All the CRUD Operations for Post, Category and Comments can be explored.
 
 ## Updates : 
-Currently, I am working on adding BDD test framework using JUnit 5 and Mockito.
+Currently, I am working on adding BDD test framework using ```JUnit 5``` and ```Mockito```.
 
 ## Contact
 Please reach out to me for any query regarding this repo: 
