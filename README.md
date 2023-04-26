@@ -39,6 +39,7 @@ In this app, users can access the REST APIs based on their role. Admin can creat
 3. MySQL Workbench
 4. Postman Rest Client
 5. Docker Desktop
+6. Git
 
 ## Launch : 
 Clone the github repository and let maven install all the necessary dependencies. Activate the ```dev``` profile in ```application.properties``` and run the Springboot app. 
