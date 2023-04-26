@@ -53,6 +53,7 @@ The REST API documentation is available at [Swagger UI](http://localhost:8080/sw
 3. Add JWT Token to create post. 
 4. Add new user using the register api.
 5. Search posts based on title and description. 
+6. All the CRUD Operations for Post, Category and Comments can be explored.
 
 ## Updates : 
 Currently, I am working on adding BDD test framework using JUnit 5 and Mockito.
