@@ -64,7 +64,7 @@ Please reach out to me for any query regarding this repo:
 
 Saloni Dilip Thakare
 
-salonidthakare@gmail.com
+salonithakare95@gmail.com
 
 [LinkedIn](https://www.linkedin.com/in/saloni-dilip-thakare-762034105/)
 
